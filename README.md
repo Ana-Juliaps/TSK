@@ -6,8 +6,8 @@ Aplicativo e site para fãs de K-pop acompanharem seus artistas favoritos, lanç
 ## 📝 Descrição do Problema Real
 O crescimento exponencial da popularidade do K-pop no Brasil e no mundo gerou uma demanda por plataformas que centralizem informações sobre artistas, grupos, lançamentos, eventos e votações. Atualmente, os fãs precisam acessar diversas redes sociais, sites e aplicativos para se manterem atualizados, o que torna a experiência fragmentada, confusa e pouco eficiente. Além disso, a ausência de personalização e de recursos de acessibilidade limita o acesso de muitos usuários a essas informações. 
 Os resultados da pesquisa de campo evidenciam os pontos negativos relatados pelos usuários, os quais reforçam a necessidade de uma solução como o TSK, que se propõe a centralizar e simplificar o acesso às informações do universo K-pop.
-Dados da Pesquisa de campo 
 
+Dados da Pesquisa de campo 
 [📄 Pesquisa de Campo (PDF)](Pesquisa%20de%20campo.pdf)
 
 ## 💡 Proposta da Solução
