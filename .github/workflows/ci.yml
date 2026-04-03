@@ -27,3 +27,6 @@ jobs:
 
       - name: Instalar dependências
         run: npm ci
+
+      - name: Instalar ESLint
+        run: npm install eslint --save-dev
