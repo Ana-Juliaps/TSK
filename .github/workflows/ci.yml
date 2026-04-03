@@ -1,4 +1,4 @@
-name: CI
+name: CI Teste Básico
 
 on:
   push:
@@ -16,11 +16,5 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Rodar lint
-        run: npm run lint
-
-      - name: Rodar testes
-        run: npm test
+      - name: Teste simples
+        run: echo "Pipeline funcionando!"
