@@ -18,3 +18,6 @@ jobs:
 
       - name: Teste simples
         run: echo "Pipeline funcionando!"
+
+      - name: Rodar lint
+        run: npx eslint src || echo "Lint falhou, mas pipeline continua"
