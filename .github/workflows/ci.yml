@@ -20,7 +20,7 @@ jobs:
         run: echo "Pipeline funcionando!"
 
       - name: Rodar lint
-        run: npx eslint src
+        run: npm eslint src
 
       - name: Rodar testes
         run: npm test
