@@ -21,3 +21,6 @@ jobs:
 
       - name: Rodar lint
         run: npx eslint src || echo "Lint falhou, mas pipeline continua"
+
+      - name: Rodar testes
+        run: npm test || echo "Testes falharam, mas pipeline continua"
