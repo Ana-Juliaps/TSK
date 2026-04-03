@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  "lint": "eslint src"
+"scripts": {
+  "lint": "npx eslint src",
+  "test": "jest"
 },
   "keywords": [],
   "author": "",
