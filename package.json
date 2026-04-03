@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "lint": "npx eslint src",
-  "test": "jest"
-},
+    "lint": "npx eslint src",
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
