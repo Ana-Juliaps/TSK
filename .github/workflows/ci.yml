@@ -24,3 +24,6 @@ jobs:
 
       - name: Rodar testes
         run: npm test
+
+      - name: Instalar dependências
+        run: npm ci
