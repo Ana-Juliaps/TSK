@@ -8,7 +8,7 @@ O crescimento exponencial da popularidade do K-pop no Brasil e no mundo gerou um
 Os resultados da pesquisa de campo evidenciam os pontos negativos relatados pelos usuários, os quais reforçam a necessidade de uma solução como o TSK, que se propõe a centralizar e simplificar o acesso às informações do universo K-pop.
 
 Dados da Pesquisa de campo 
-[📄 Pesquisa de Campo (PDF)](Pesquisa%20de%20campo.pdf)
+[📄 Pesquisa de Campo (PDF)](Documentos/Pesquisa%20de%20campo.pdf)
 
 ## 💡 Proposta da Solução
 O projeto **TSK (Tudo Sobre Kpop)** propõe o desenvolvimento de um site e futuro aplicativo que centralize todas as informações relevantes do universo K-pop em um único ambiente digital. A plataforma permitirá que os usuários acompanhem seus artistas favoritos, recebam notificações personalizadas sobre lançamentos, eventos e votações, e tenham acesso a conteúdos atualizados de forma prática e intuitiva. O sistema também contará com recursos de acessibilidade e personalização, promovendo uma experiência inclusiva e adaptada ao perfil de cada fã.
