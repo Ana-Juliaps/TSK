@@ -2,8 +2,17 @@ function addRecord(list, record) {
   if (!record || typeof record.title !== 'string' || record.title.trim() === '') {
     throw new Error('Invalid title');
   }
+
   const id = Date.now().toString();
-  const item = { id, title: record.title, description: record.description || '', done: false };
+  const item = {
+    id,
+    title: record.title,
+    artist: record.artist || '',
+    type: record.type || '',
+    notes: record.notes || '',
+    done: false
+  };
+
   return [...list, item];
 }
 
