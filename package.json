@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "lint": "npx eslint src",
-  "test": "jest"
-},
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "npx eslint src"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,7 +15,9 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.1.0",
     "globals": "^17.4.0",
-    "jest": "^30.3.0"
+    "husky": "^9.1.7",
+    "jest": "^30.3.0",
+    "lint-staged": "^16.4.0"
   },
   "dependencies": {
     "express": "^5.2.1"
