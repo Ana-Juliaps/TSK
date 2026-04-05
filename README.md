@@ -66,7 +66,7 @@ Verificar qualidade do código
 ```
 npm run lint
 ```
-![CI](https://github.com/Ana-Juliaps/TSK/actions/workflows/ci.yml/badge.svg)
+## ![CI](https://github.com/Ana-Juliaps/TSK/actions/workflows/ci.yml/badge.svg)
 
 # 👩‍💻 Autor
 Ana Júlia — Bootcamp TSK
