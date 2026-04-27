@@ -3,7 +3,7 @@ function addRecord(list, record) {
     throw new Error('Invalid title');
   }
 
-  const id = Date.now().toString();
+const id = (List.length + 1).toString();
   const item = {
     id,
     title: record.title,

@@ -1,0 +1,12 @@
+{
+  "musicas": [
+    {
+      "title": "Blind Spot",
+      "artist": "StrayKids",
+      "type": "single",
+      "notes": "Lançamento 2025",
+      "id": "1",
+      "done": false
+    }
+  ]
+}
