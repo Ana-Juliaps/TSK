@@ -45,6 +45,7 @@ git clone https://github.com/Ana-Juliaps/TSK.git
 cd tsk
 npm install
 ```
+
 ## ▶️ Execução
 Rodar o servidor local:
 ```
@@ -55,11 +56,16 @@ Acesse no navegador:
 http://localhost:3000
 ```
 
+## 🚀 Deploy
+Acesse a aplicação publicada: [https://tks.vercel.app](https://tsk-pied.vercel.app/)
+
 ## 🧪 Testes
-Rodar os testes automatizados:
-```
-npm test
-```
+- Testes unitários e de integração implementados com **Jest** e **Nock**.
+- Para rodar localmente:
+  ```bash
+  npm ci
+  npm test
+  ```
 
 🔍 Lint
 Verificar qualidade do código
