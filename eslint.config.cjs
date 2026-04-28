@@ -1,25 +1,25 @@
-import js from "@eslint/js";
-import globals from "globals";
-import { defineConfig } from "eslint/config";
+// eslint.config.cjs
+const js = require('@eslint/js');
+const globals = require('globals');
 
-export default defineConfig({
-  files: ["**/*.{js,mjs,cjs}"],
-  plugins: { js },
-  extends: ["js/recommended", "eslint:recommended"],
-  languageOptions: {
-    globals: {
-      ...globals.node,
-      ...globals.browser
+module.exports = [
+  // configuração recomendada do @eslint/js
+  js.configs.recommended,
+
+  // bloco customizado sem usar "env" ou "extends"
+  {
+    files: ["**/*.{js,cjs}"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser
+      },
+      ecmaVersion: 2021,
+      sourceType: "module"
     },
-    ecmaVersion: 2021,
-    sourceType: "module"
-  },
-  env: {
-    node: true,
-    es2021: true,
-    jest: true
-  },
-  rules: {
-    // suas regras aqui
+    // regras personalizadas aqui
+    rules: {
+      // ex: "no-console": "warn"
+    }
   }
-});
+];

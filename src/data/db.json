@@ -7,6 +7,12 @@
       "notes": "Lançamento 2025",
       "id": "1",
       "done": false
+    },
+    {
+      "title": "Blind Spot",
+      "artist": "StrayKids",
+      "id": "2",
+      "done": false
     }
   ]
 }
