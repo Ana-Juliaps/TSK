@@ -1,15 +1,44 @@
+// src/server.js
 const express = require("express");
-const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
-const { removeRecord, countPending } = require("./tks");
 
+// importa routers
+const authRouter = require("./APIs/auth/index.js");
+const homeRouter = require("./APIs/home/index.js");
+const artistasRouter = require("./APIs/artistas/index.js");
+const usuariosRouter = require("./APIs/usuarios/index.js");
+const notificacoesRouter = require("./APIs/notificacoes/index.js");
+const acessibilidadeRouter = require("./APIs/acessibilidade/index.js");
+const musicaRouter = require('./APIs/artistas/musicas.js');
+
+// cria o app
 const app = express();
-const PORT = 3000;
-
 app.use(bodyParser.json());
+app.use(express.json());
+
+// monta as rotas principais
+app.use("/auth", authRouter);
+app.use("/home", homeRouter);
+app.use("/artistas", artistasRouter);
+app.use("/usuarios", usuariosRouter);
+app.use("/notificacoes", notificacoesRouter);
+app.use("/acessibilidade", acessibilidadeRouter);
+app.use('/artistas/musica', musicaRouter);
+// exporta o app para testes
+module.exports = app;
+
+// se rodar diretamente, inicia servidor
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+  });
+}
+
 
 const dbPath = path.join(__dirname, "data", "db.json");
+
 
 function readDB() {
   const data = fs.readFileSync(dbPath, "utf-8");
@@ -80,9 +109,3 @@ app.get("/musicas/pending", (req, res) => {
   const qtd = countPending(db.musicas);
   res.json({ pendentes: qtd });
 });
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
-
-module.exports = app;

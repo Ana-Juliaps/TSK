@@ -1,18 +1,10 @@
 {
-  "musicas": [
+  "users": [
     {
-      "title": "Blind Spot",
-      "artist": "StrayKids",
-      "type": "single",
-      "notes": "Lançamento 2025",
-      "id": "1",
-      "done": false
-    },
-    {
-      "title": "Blind Spot",
-      "artist": "StrayKids",
-      "id": "2",
-      "done": false
+      "id": 1,
+      "name": "Ana",
+      "email": "ana@test.com",
+      "password": "hashfake"
     }
   ]
 }

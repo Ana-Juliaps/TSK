@@ -1,5 +1,7 @@
-function hello() {
-    console.log("Olá, Ana!");
-}
+// src/index.js
+const app = require('./server.js');
 
-hello();
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
