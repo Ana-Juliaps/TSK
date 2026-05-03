@@ -11,6 +11,7 @@ const usuariosRouter = require("./APIs/usuarios/index.js");
 const notificacoesRouter = require("./APIs/notificacoes/index.js");
 const acessibilidadeRouter = require("./APIs/acessibilidade/index.js");
 const musicaRouter = require('./APIs/artistas/musicas.js');
+const pesquisaRouter = require('./apis/pesquisa/index.js');
 
 // cria o app
 const app = express();
@@ -25,6 +26,7 @@ app.use("/usuarios", usuariosRouter);
 app.use("/notificacoes", notificacoesRouter);
 app.use("/acessibilidade", acessibilidadeRouter);
 app.use('/artistas/musica', musicaRouter);
+app.use('/pesquisa', pesquisaRouter);
 // exporta o app para testes
 module.exports = app;
 

@@ -26,4 +26,22 @@ async function remover(req, res) {
   res.status(204).send();
 }
 
-module.exports = { criar, listar, buscar, atualizar, remover };
+async function atualizarFoto(req, res) {
+  const usuario = service.atualizarFoto(req.params.id, req.body.foto);
+  if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+  res.json(usuario);
+}
+
+async function atualizarConfiguracoes(req, res) {
+  const usuario = service.atualizarConfiguracoes(req.params.id, req.body);
+  if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+  res.json(usuario);
+}
+
+async function listarArtistasSeguidos(req, res) {
+  const artistas = service.listarArtistasSeguidos(req.params.id);
+  if (!artistas) return res.status(404).json({ error: 'Usuário não encontrado' });
+  res.json(artistas);
+}
+
+module.exports = { criar, listar, buscar, atualizar, remover, atualizarFoto, atualizarConfiguracoes, listarArtistasSeguidos };

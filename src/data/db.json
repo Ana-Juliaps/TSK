@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": 1777845519189,
       "name": "Ana",
       "email": "ana@test.com",
-      "password": "hashfake"
+      "password": "$2b$10$I21Mmgnoj0kznMLaxfz3p.x6xqXUxjqHnRtBeQKeLc4WSBw3OERVC"
     }
   ]
 }

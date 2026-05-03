@@ -1,19 +1,28 @@
 const model = require('./model.js');
 
-function criarNotificacao(data) {
-  return model.createNotification(data);
+function criar(data) {
+  return model.createNotificacao(data);
 }
 
-function listarNotificacoes() {
-  return model.getAllNotifications();
+function listar(tipo) {
+  return model.getAll(tipo);
 }
 
-function buscarNotificacao(id) {
-  return model.getNotificationById(id);
+function buscar(id) {
+  return model.getById(id);
 }
 
-function removerNotificacao(id) {
-  return model.deleteNotification(id);
+function remover(id) {
+  return model.remove(id);
 }
 
-module.exports = { criarNotificacao, listarNotificacoes, buscarNotificacao, removerNotificacao };
+function marcarComoLida(id) {
+  return model.marcarLida(id);
+}
+
+function arquivarNotificacao(id) {
+  return model.arquivar(id);
+}
+
+module.exports = { criar, listar, buscar, remover, marcarComoLida, arquivarNotificacao };
+

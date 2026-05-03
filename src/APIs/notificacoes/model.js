@@ -1,23 +1,40 @@
-let notificacoes = [];
-let idCounter = 1;
+let notificacoes = [
+  { id: 1, tipo: 'evento', mensagem: 'Novo show do BTS', lida: false, arquivada: false, artistaId: 1 },
+  { id: 2, tipo: 'album', mensagem: 'BLACKPINK lançou novo álbum', lida: false, arquivada: false, artistaId: 2 }
+];
 
-function createNotification({ titulo, mensagem }) {
-  const nova = { id: idCounter++, titulo, mensagem, data: new Date().toISOString() };
+function createNotificacao(data) {
+  const nova = { id: notificacoes.length + 1, ...data, lida: false, arquivada: false };
   notificacoes.push(nova);
   return nova;
 }
 
-function getAllNotifications() {
-  return notificacoes;
+function getAll(tipo) {
+  return tipo ? notificacoes.filter(n => n.tipo === tipo) : notificacoes;
 }
 
-function getNotificationById(id) {
+function getById(id) {
   return notificacoes.find(n => n.id == id);
 }
 
-function deleteNotification(id) {
+function remove(id) {
   notificacoes = notificacoes.filter(n => n.id != id);
   return true;
 }
 
-module.exports = { createNotification, getAllNotifications, getNotificationById, deleteNotification };
+function marcarLida(id) {
+  const n = getById(id);
+  if (!n) return null;
+  n.lida = true;
+  return n;
+}
+
+function arquivar(id) {
+  const n = getById(id);
+  if (!n) return null;
+  n.arquivada = true;
+  return n;
+}
+
+module.exports = { createNotificacao, getAll, getById, remove, marcarLida, arquivar };
+
