@@ -9,6 +9,6 @@ router.put('/:id', controller.atualizar);
 router.delete('/:id', controller.remover);
 router.put('/:id/foto', controller.atualizarFoto);
 router.put('/:id/configuracoes', controller.atualizarConfiguracoes);
-router.get('/:id/artistas', controller.listarArtistasSeguidos);
+router.get('/:id/usuarios', controller.listarArtistasSeguidos);
 
 module.exports = router;

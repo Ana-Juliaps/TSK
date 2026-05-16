@@ -18,7 +18,7 @@ async function writeDB(data) {
 }
 
 async function login(email, password) {
-  const db = readDB();
+  const db = await readDB();
   db.usuarios = db.usuarios || [];
 
   const normalizedEmail = email.trim().toLowerCase();

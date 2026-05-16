@@ -4,17 +4,8 @@
       "id": 1,
       "name": "Ana",
       "email": "ana@test.com",
-      "password": "$2b$10$BVl79btr1jrpdBzfL/URkunuIP2kNXI6PcSxsHUBs8el4BM8R7Tcu",
+      "password": "hashfake",
       "foto": "novaFoto.png",
-      "bias": "BTS",
-      "idade": 25,
-      "artistasSeguidos": [
-        1
-      ],
-      "musicasCurtidas": [
-        1
-      ],
-      "idioma": "pt",
       "configuracoes": {
         "idioma": "en-US",
         "notificacoes": false
@@ -22,22 +13,6 @@
     },
     {
       "id": 2,
-      "name": "Carlos",
-      "email": "carlos@tsk.com",
-      "password": "$2b$10$bU87uslYP0s01q75HkfeouYz5Io9Lx6MHtgLhiKBblfCIwDDQjb96",
-      "foto": "carlos.png",
-      "bias": "BLACKPINK",
-      "idade": 22,
-      "artistasSeguidos": [
-        2
-      ],
-      "musicasCurtidas": [
-        2
-      ],
-      "idioma": "pt"
-    },
-    {
-      "id": 3,
       "name": "Ana",
       "email": "ana@tsk.com",
       "password": "hashedpassword",
@@ -47,48 +22,6 @@
       "artistasSeguidos": [],
       "musicasCurtidas": [],
       "idioma": "pt"
-    }
-  ],
-  "artistas": [
-    {
-      "id": 1,
-      "nome": "BTS",
-      "descricao": "Boy group K-pop"
-    },
-    {
-      "id": 2,
-      "nome": "BLACKPINK",
-      "descricao": "Girl group K-pop"
-    }
-  ],
-  "musicas": [
-    {
-      "id": 1,
-      "titulo": "Dynamite",
-      "album": "Single",
-      "ano": 2020,
-      "artistaId": 1
-    },
-    {
-      "id": 2,
-      "titulo": "How You Like That",
-      "album": "Single",
-      "ano": 2020,
-      "artistaId": 2
-    }
-  ],
-  "notificacoes": [
-    {
-      "id": 1,
-      "tipo": "alerta",
-      "mensagem": "Novo comeback do BTS!",
-      "usuarioId": 1
-    },
-    {
-      "id": 2,
-      "tipo": "alerta",
-      "mensagem": "BLACKPINK lançou novo single!",
-      "usuarioId": 2
     }
   ],
   "usuarios": [

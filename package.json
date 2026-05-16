@@ -32,8 +32,6 @@
     "pg": "^8.20.0"
   },
   "jest": {
-  "setupFilesAfterEnv": [
-    "<rootDir>/test-setup.js"
-  ]
-}
+    "globalSetup": "<rootDir>/test-setup.js"
+  }
 }

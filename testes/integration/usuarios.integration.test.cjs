@@ -33,8 +33,8 @@ describe('Usuarios API', () => {
     expect(res.body.configuracoes.idioma).toBe('en-US');
   });
 
-  test('GET /usuarios/:id/artistas deve retornar lista de artistas seguidos', async () => {
-    const res = await request(app).get('/usuarios/1/artistas');
+  test('GET /usuarios/:id/usuarios deve retornar lista de artistas seguidos', async () => {
+    const res = await request(app).get('/usuarios/1/usuarios');
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
   });
