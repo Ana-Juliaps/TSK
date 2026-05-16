@@ -7,21 +7,28 @@ const dbPath = path.resolve('src/data/db.json');
 
 async function readDB() {
   const data = await fs.readFile(dbPath, 'utf-8');
-  return JSON.parse(data);
+  const db = JSON.parse(data);
+  db.users = db.users || [];
+  return db;
 }
 
 async function writeDB(data) {
+  data.users = data.users || [];
   await fs.writeFile(dbPath, JSON.stringify(data, null, 2));
 }
 
 async function login(email, password) {
-  const db = await readDB();
-  const user = db.users.find(u => u.email === email);
-  if (!user) return null;
+  const db = readDB();
+  db.usuarios = db.usuarios || [];
 
-  const match = await bcrypt.compare(password, user.password);
-  return match ? user : null;
+  const normalizedEmail = email.trim().toLowerCase();
+  const user = db.usuarios.find(u =>
+    u.email.toLowerCase() === normalizedEmail && u.password === password
+  );
+
+  return user || null;
 }
+
 
 async function register(name, email, password) {
   const db = await readDB();

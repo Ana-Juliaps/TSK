@@ -1,0 +1,106 @@
+.home__hero {
+  position: relative;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, var(--pink-main) 0%, var(--pink-sat) 40%, var(--pink-des) 100%);
+  color: #0a0a0a;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.home__hero-content { position: relative; z-index: 2; max-width: 600px; }
+.home__hero-sub {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+.home__hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.home__hero-glow {
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Sections */
+.home__section { margin-bottom: 2.5rem; }
+.home__section .section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Artist chips */
+.home__artists-row {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.home__artist-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.home__artist-icon { font-size: 1.2rem; }
+
+/* News */
+.home__news-card { display: flex; flex-direction: column; gap: 0.6rem; }
+.home__news-text { font-size: 0.95rem; color: var(--text-secondary); }
+
+/* Comebacks */
+.home__comeback-card {
+  background: linear-gradient(135deg, var(--bg-glass), transparent);
+  border-left: 3px solid var(--accent);
+}
+.home__comeback-group { font-weight: 700; margin-bottom: 0.3rem; }
+.home__comeback-msg { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* Recommendations */
+.home__rec-card h3 { font-weight: 700; margin-bottom: 0.3rem; }
+.home__rec-reason { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Full artist card */
+.home__full-artist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
+}
+.home__full-artist-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home__full-artist-card h3 { font-weight: 700; }
+.home__full-artist-desc { font-size: 0.85rem; color: var(--text-muted); }
+.home__full-artist-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; }
+
+@media (max-width: 768px) {
+  .home__hero { padding: 2rem 1.25rem; }
+}

@@ -1,5 +1,4 @@
 // src/apis/artistas/index.js
-const express = require('express');
 const router = require('./routes.js');
 
 // rota de teste

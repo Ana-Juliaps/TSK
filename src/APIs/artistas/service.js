@@ -1,19 +1,14 @@
-const model = require('./model.js');
+const { getArtistInfo, saveArtistToDB } = require('../../integrations/musicbrainz');
+const db = require('../../data/db.json');
 
-function listarArtistas() {
-  return model.getAll();
+async function getArtistByMbid(mbid) {
+  let artist = db.artistas.find(a => a.mbid === mbid);
+  if (!artist) {
+    const info = await getArtistInfo(mbid);
+    artist = saveArtistToDB(info);
+  }
+  return artist;
 }
 
-function buscarArtista(id) {
-  return model.getById(id);
-}
+module.exports = { getArtistByMbid };
 
-function acompanharArtista(id, userId) {
-  return model.follow(id, userId);
-}
-
-function deixarDeAcompanhar(id, userId) {
-  return model.unfollow(id, userId);
-}
-
-module.exports = { listarArtistas, buscarArtista, acompanharArtista, deixarDeAcompanhar };

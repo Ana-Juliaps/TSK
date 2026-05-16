@@ -1,35 +1,35 @@
 const model = require('./model.js');
 
-function criarUsuario(data) {
-  return model.createUser(data);
+async function criarUsuario(data) {
+  return await model.createUser(data);
 }
 
-function listarUsuarios() {
-  return model.getAllUsers();
+async function listarUsuarios() {
+  return await model.getAllUsers();
 }
 
-function buscarUsuario(id) {
-  return model.getUserById(id);
+async function buscarUsuario(id) {
+  return await model.getUserById(id);
 }
 
-function atualizarUsuario(id, data) {
-  return model.updateUser(id, data);
+async function atualizarUsuario(id, data) {
+  return await model.updateUser(id, data);
 }
 
-function removerUsuario(id) {
-  return model.deleteUser(id);
+async function removerUsuario(id) {
+  return await model.deleteUser(id);
 }
 
-function atualizarFoto(id, foto) {
-  return model.updateFoto(id, foto);
+async function atualizarFoto(id, foto) {
+  return await model.updateFoto(id, foto);
 }
 
-function atualizarConfiguracoes(id, config) {
-  return model.updateConfig(id, config);
+async function atualizarConfiguracoes(id, config) {
+  return await model.updateConfig(id, config);
 }
 
-function listarArtistasSeguidos(id) {
-  return model.getArtistasSeguidos(id);
+async function listarArtistasSeguidos(id) {
+  return await model.getArtistasSeguidos(id);
 }
 
 module.exports = { criarUsuario, listarUsuarios, buscarUsuario, atualizarUsuario, removerUsuario, atualizarFoto, atualizarConfiguracoes, listarArtistasSeguidos };

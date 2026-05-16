@@ -1,7 +1,9 @@
 // src/server.js
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
+const { removeRecord, countPending } = require('./tks.js');
 
 // importa routers
 const authRouter = require("./APIs/auth/index.js");
@@ -10,8 +12,7 @@ const artistasRouter = require("./APIs/artistas/index.js");
 const usuariosRouter = require("./APIs/usuarios/index.js");
 const notificacoesRouter = require("./APIs/notificacoes/index.js");
 const acessibilidadeRouter = require("./APIs/acessibilidade/index.js");
-const musicaRouter = require('./APIs/artistas/musicas.js');
-const pesquisaRouter = require('./apis/pesquisa/index.js');
+const pesquisaRouter = require('./APIs/pesquisa/index.js');
 
 // cria o app
 const app = express();
@@ -25,10 +26,9 @@ app.use("/artistas", artistasRouter);
 app.use("/usuarios", usuariosRouter);
 app.use("/notificacoes", notificacoesRouter);
 app.use("/acessibilidade", acessibilidadeRouter);
-app.use('/artistas/musica', musicaRouter);
 app.use('/pesquisa', pesquisaRouter);
 // exporta o app para testes
-module.exports = app;
+
 
 // se rodar diretamente, inicia servidor
 if (require.main === module) {
@@ -111,3 +111,4 @@ app.get("/musicas/pending", (req, res) => {
   const qtd = countPending(db.musicas);
   res.json({ pendentes: qtd });
 });
+module.exports = app;

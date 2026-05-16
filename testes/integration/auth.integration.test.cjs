@@ -1,70 +1,44 @@
-// testes/integration/auth.integration.test.cjs
-const fs = require('fs/promises');
-const path = require('path');
 const request = require('supertest');
-const app = require('../../src/server.js');
-
-const dbPath = path.resolve('src/data/db.json');
+const app = require('../../src/server'); // ajuste o caminho conforme seu projeto
 
 describe('Auth Integration Tests', () => {
-  // Antes de cada teste, resetamos o db.json
-  beforeEach(async () => {
-    const db = { users: [] };
-    await fs.writeFile(dbPath, JSON.stringify(db, null, 2));
-  });
+  const userData = { name: 'Ana', email: 'ana@test.com', password: '12345678' };
 
-  test('POST /auth/register deve criar usuário novo', async () => {
+  it('POST /auth/register deve criar usuário novo', async () => {
     const res = await request(app)
       .post('/auth/register')
-      .send({ name: 'Ana', email: 'ana@test.com', password: '12345678' });
+      .send(userData);
 
     expect(res.statusCode).toBe(201);
     expect(res.body.user).toHaveProperty('id');
-    expect(res.body.user.email).toBe('ana@test.com');
+    expect(res.body.user.email).toBe(userData.email.toLowerCase());
   });
 
-  test('POST /auth/register deve falhar se e-mail já existe', async () => {
-    // cria usuário inicial
-    await request(app)
-      .post('/auth/register')
-      .send({ name: 'Ana', email: 'ana@test.com', password: '12345678' });
-
-    // tenta cadastrar novamente
+  it('POST /auth/register deve falhar se e-mail já existe', async () => {
     const res = await request(app)
       .post('/auth/register')
-      .send({ name: 'Ana', email: 'ana@test.com', password: '12345678' });
+      .send(userData);
 
     expect(res.statusCode).toBe(400);
     expect(res.body.error).toBe('E-mail já cadastrado');
   });
 
-  test('POST /auth/login deve autenticar usuário válido', async () => {
-    // cria usuário
-    await request(app)
-      .post('/auth/register')
-      .send({ name: 'Ana', email: 'ana@test.com', password: '12345678' });
-
-    // tenta login
+  it('POST /auth/login deve autenticar usuário válido', async () => {
     const res = await request(app)
       .post('/auth/login')
-      .send({ email: 'ana@test.com', password: '12345678' });
+      .send({ email: userData.email, password: userData.password });
 
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe('Login realizado com sucesso');
+    expect(res.body.user.email).toBe(userData.email.toLowerCase());
   });
 
-  test('POST /auth/login deve falhar com senha incorreta', async () => {
-    // cria usuário
-    await request(app)
-      .post('/auth/register')
-      .send({ name: 'Ana', email: 'ana@test.com', password: '12345678' });
-
-    // tenta login com senha errada
+  it('POST /auth/login deve falhar com credenciais inválidas', async () => {
     const res = await request(app)
       .post('/auth/login')
-      .send({ email: 'ana@test.com', password: 'senhaErrada' });
+      .send({ email: 'naoexiste@test.com', password: 'senhaerrada' });
 
     expect(res.statusCode).toBe(401);
-    expect(res.body.message).toBe('Credenciais inválidas');
+    expect(res.body.error).toBe('Credenciais inválidas');
   });
 });

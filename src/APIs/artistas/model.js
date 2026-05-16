@@ -1,35 +1,12 @@
-let artistas = [
-  {
-    id: 1,
-    nome: 'Stray Kids',
-    descricao: 'Grupo sul-coreano de K-pop',
-    eventos: ['Show no Rock in Rio', 'Fan meeting online'],
-    albuns: ['Karma', 'Noeasy'],
-    votacoes: ['Melhor Grupo Masculino', 'Melhor Álbum de K-pop'],
-    seguidores: []
-  }
-];
+const db = require('../../data/db.json');
 
-function getAll() {
-  return artistas;
+function findById(id) {
+  return db.artistas.find(a => a.id === parseInt(id));
 }
 
-function getById(id) {
-  return artistas.find(a => a.id == id);
+function findByMbid(mbid) {
+  return db.artistas.find(a => a.mbid === mbid);
 }
 
-function follow(id, userId) {
-  const artista = getById(id);
-  if (!artista) return null;
-  if (!artista.seguidores.includes(userId)) artista.seguidores.push(userId);
-  return artista;
-}
+module.exports = { findById, findByMbid };
 
-function unfollow(id, userId) {
-  const artista = getById(id);
-  if (!artista) return null;
-  artista.seguidores = artista.seguidores.filter(u => u !== userId);
-  return artista;
-}
-
-module.exports = { getAll, getById, follow, unfollow };

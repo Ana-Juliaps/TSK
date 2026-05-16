@@ -1,0 +1,106 @@
+.artist__hero {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 3rem 2rem;
+}
+.artist__hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-main) 60%, var(--pink-sat) 100%);
+  opacity: 0.9;
+}
+.artist__hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.artist__hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+.artist__hero-info { color: #fff; }
+.artist__hero-info .tag {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.artist__hero-info .page-title { color: #fff; margin-top: 0.3rem; }
+.artist__hero-desc { opacity: 0.9; margin-top: 0.3rem; }
+.artist__hero-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.artist__hero-stats span { display: flex; align-items: center; gap: 0.3rem; }
+
+/* Sections */
+.artist__section {
+  margin-bottom: 2.5rem;
+}
+.artist__section .section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Events */
+.artist__event-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-left: 3px solid var(--accent);
+}
+.artist__event-icon { color: var(--accent-hover); flex-shrink: 0; }
+
+/* Albums */
+.artist__album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+.artist__album-cover {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artist__album-name { font-weight: 600; font-size: 0.95rem; }
+
+/* MB releases */
+.artist__mb-release {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+.artist__mb-release svg { color: var(--accent-hover); flex-shrink: 0; margin-top: 2px; }
+.artist__mb-title { font-weight: 600; font-size: 0.9rem; }
+.artist__mb-date { font-size: 0.8rem; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .artist__hero { padding: 2rem 1.25rem; }
+  .artist__hero-content { flex-direction: column; text-align: center; }
+  .artist__hero-stats { justify-content: center; }
+}
