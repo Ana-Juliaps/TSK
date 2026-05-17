@@ -80,9 +80,6 @@ Acesse no navegador:
 http://localhost:3000
 ```
 
-## 🚀 Deploy
-Acesse a aplicação publicada: [https://tks.vercel.app](https://tsk-pied.vercel.app/)
-
 ## 🧪 Testes
 - Testes unitários e de integração implementados com **Jest** e **Nock**.
 - Para rodar localmente:
