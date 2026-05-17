@@ -30,6 +30,12 @@
       "name": "Ana",
       "email": "ana@test.com",
       "password": "12345678"
+    },
+    {
+      "id": 2,
+      "name": "Najuzinhagameplay127",
+      "email": "anajulia@gmail.com",
+      "password": "1234567"
     }
   ]
 }

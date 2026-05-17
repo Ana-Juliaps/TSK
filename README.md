@@ -28,14 +28,38 @@ O projeto **TSK (Tudo Sobre Kpop)** propõe o desenvolvimento de um site e futur
 6. Campo de pesquisa para encontrar artistas, grupos, álbuns e músicas  
 7. Página de acessibilidade com modo claro/escuro e recursos para pessoas com deficiência visual e auditiva  
 
+## 🚀 Etapa Intermediária — Evolução do Projeto
+Na entrega intermediária, o foco foi evoluir a aplicação de forma profissional e rastreável, seguindo práticas de mercado:
+
+- Gestão de demandas com GitHub Issues: cada nova funcionalidade foi documentada em uma Issue.
+
+- Branching no Git: o desenvolvimento ocorreu em uma branch dedicada chamada entrega-intermediaria.
+
+- Integração com API pública: o sistema passou a consumir dados externos (ex.: artistas via MusicBrainz API), enriquecendo a experiência dos usuários.
+
+- Teste de Integração: foram criados testes automatizados para validar a comunicação com a API e garantir que o fluxo de dados não quebre a aplicação.
+
+- Deploy: a aplicação foi publicada na nuvem, ficando acessível através de um link público.
+
+## ⚙️ Funcionalidades Implementadas nesta Etapa
+Consumo de API pública para buscar informações de artistas.
+
+Testes de integração garantindo que a API responde corretamente.
+
+Pipeline de CI/CD no GitHub Actions validando lint e testes.
+
+Deploy da aplicação em ambiente online.
+
 ## 🛠️ Tecnologias Utilizadas
 - Frontend: HTML5, CSS3, JavaScript (React)  
 - Backend: Node.js com Express  
-- Banco de Dados: Firebase (protótipo)  
-- Armazenamento local: JSON ou IndexedDB  
-- Design e prototipação: Figma  
-- Controle de versão: Git e GitHub  
-- Acessibilidade: WCAG 2.1 como referência  
+- Banco de Dados: Firebase (protótipo)
+- Testes: Jest + Supertest
+- CI/CD: GitHub Actions
+- Deploy: Vercel
+
+🚀 Deploy
+Acesse a aplicação publicada: https://tsk-pied.vercel.app
 
 ## 🚀 Instalação
 Clone o repositório e instale as dependências:
