@@ -1,3 +1,4 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -38,6 +39,8 @@ function MainLayout() {
             <Route path="/artistas" element={<ProtectedRoute><Artists /></ProtectedRoute>} />
             <Route path="/notificacoes" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
             <Route path="/pesquisa" element={<ProtectedRoute><SearchResults /></ProtectedRoute>} />
+            {/* fallback para evitar tela em branco */}
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
       </div>
@@ -49,10 +52,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <BrowserRouter>
-          <MainLayout />
-        </BrowserRouter>
+        <MainLayout />
       </AuthProvider>
     </ThemeProvider>
   );
 }
+
