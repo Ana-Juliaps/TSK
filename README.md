@@ -56,10 +56,10 @@ Deploy da aplicação em ambiente online.
 - Banco de Dados: Firebase (protótipo)
 - Testes: Jest + Supertest
 - CI/CD: GitHub Actions
-- Deploy: Vercel
+- Deploy: Github Pages
 
 🚀 Deploy
-Acesse a aplicação publicada: https://tsk-pied.vercel.app
+Acesse a aplicação publicada: https://ana-juliaps.github.io/TSK/
 
 ## 🚀 Instalação
 Clone o repositório e instale as dependências:
