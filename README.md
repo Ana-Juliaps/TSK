@@ -58,7 +58,7 @@ Deploy da aplicação em ambiente online.
 - CI/CD: GitHub Actions
 - Deploy: Github Pages
 
-🚀 Deploy
+## 🚀 Deploy
 Acesse a aplicação publicada: https://ana-juliaps.github.io/TSK/
 
 ## 🚀 Instalação
